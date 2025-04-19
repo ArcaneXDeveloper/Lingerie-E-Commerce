@@ -170,3 +170,28 @@ document.querySelector(".prev").addEventListener("click", () => {
 
 // ✅ Load default product
 updateProductDetails(1);
+
+
+
+
+
+
+
+const selector = document.querySelector('.product-selector');
+  const indicator = selector?.querySelector('::after');
+
+  selector?.addEventListener('scroll', () => {
+    const scrollWidth = selector.scrollWidth - selector.clientWidth;
+    const scrollPosition = selector.scrollLeft;
+    const percentage = scrollPosition / scrollWidth;
+
+    const indicator = document.createElement('style');
+    indicator.innerHTML = `
+      @media (max-width: 768px) {
+        .product-selector::after {
+          transform: translateX(${percentage * 100}%);
+        }
+      }
+    `;
+    document.head.appendChild(indicator);
+  });
