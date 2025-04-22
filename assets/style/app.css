@@ -220,17 +220,6 @@ hr {
 
 @media (max-width: 768px) {
 
-    .announcement {
-        display: flex;
-        padding: 10px;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        align-self: stretch;
-        color: var(--clr-800);
-        background-color: var(--clr-mila);
-    }
-
     .hamburger {
         display: block;
     }
